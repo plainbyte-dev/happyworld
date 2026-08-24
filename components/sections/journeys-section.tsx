@@ -1,0 +1,42 @@
+import { ArrowRight } from 'lucide-react';
+import { content } from '@/data/content';
+
+type JourneysSectionProps = {
+  onSelectInterest: (interest: string) => void;
+};
+
+function JourneysSection({ onSelectInterest }: JourneysSectionProps) {
+  return (
+    <section id="journeys" className="journey-section px-5 pb-28 sm:px-8 lg:px-12">
+      <div className="mx-auto max-w-[1440px]">
+        <div className="mb-10 flex flex-col justify-between gap-5 sm:flex-row sm:items-end">
+          <div>
+            <p className="eyebrow text-[#e6b96c]">WAYS IN</p>
+            <h2 className="mt-3 font-display text-5xl leading-[.93] text-[#f3efe6] sm:text-6xl" data-testid="text-journeys-heading">Choose a direction.</h2>
+          </div>
+          <p className="max-w-[285px] text-sm leading-relaxed text-[#b8c9bd]">Different routes into the same feeling: more present, more connected, more alive.</p>
+        </div>
+        <div className="experience-grid">
+          {content.experiences.map((experience, index) => (
+            <article key={experience.title} className={`experience-card ${index === 1 ? 'experience-card-tall' : ''}`} data-testid={`card-experience-${index + 1}`}>
+              <img src={experience.image} alt={`${experience.title} in Nepal`} loading="lazy" />
+              <div className="experience-overlay" />
+              <div className="absolute inset-x-0 bottom-0 p-5 sm:p-7">
+                <div className="flex items-center justify-between">
+                  <span className="eyebrow text-[#e6b96c]">{experience.kind}</span>
+                </div>
+                <h3 className="mt-3 font-display text-[2.35rem] leading-none text-[#f3efe6]">{experience.title}</h3>
+                <p className="mt-3 max-w-[260px] text-sm leading-relaxed text-[#e2e7dc]">{experience.detail}</p>
+                <button type="button" className="experience-link mt-6" onClick={() => onSelectInterest(experience.kind.toLowerCase())} data-testid={`button-experience-${index + 1}`}>
+                  Start here <ArrowRight size={15} />
+                </button>
+              </div>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+export default JourneysSection;
