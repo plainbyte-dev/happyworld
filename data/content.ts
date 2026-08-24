@@ -16,8 +16,8 @@ export type Experience = {
 
 export const content = {
   brand: {
-    name: 'Himalayan Trails',
-    mark: 'HT',
+    name: 'Happy World',
+    mark: 'HW',
     location: 'Kathmandu · Nepal',
   },
   nav: [
@@ -96,7 +96,7 @@ export const content = {
   },
   footer: {
     statement: 'The trail stays with you.',
-    email: 'hello@himalayantrails.com',
+    email: 'hello@happyworld.com',
     phone: '+977 1 452 1098',
   },
 } as const;

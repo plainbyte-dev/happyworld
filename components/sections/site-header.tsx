@@ -16,8 +16,8 @@ function SiteHeader({ scrolled, menuOpen, onToggleMenu, onEnquire }: SiteHeaderP
         <a href="#top" className="flex items-center gap-3" data-testid="link-brand">
           <BrandMark inverse={!scrolled} />
           <span className="brand-wordmark">
-            <span>Himalayan</span>
-            <span>Trails</span>
+            <span>Happy</span>
+            <span>World</span>
           </span>
         </a>
         <nav className="hidden items-center gap-9 lg:flex" aria-label="Main navigation">

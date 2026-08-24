@@ -8,7 +8,7 @@ function SiteFooter() {
       <div className="mx-auto max-w-[1440px]">
         <div className="grid gap-12 border-b border-[#36584e] pb-14 md:grid-cols-[1.4fr_.7fr_.7fr]">
           <div>
-            <div className="flex items-center gap-3"><BrandMark inverse /><span className="brand-wordmark footer-wordmark"><span>Himalayan</span><span>Trails</span></span></div>
+            <div className="flex items-center gap-3"><BrandMark inverse /><span className="brand-wordmark footer-wordmark"><span>Happy</span><span>World</span></span></div>
             <h2 className="mt-12 max-w-[450px] font-display text-5xl leading-[.92] text-[#f3efe6] sm:text-6xl" data-testid="text-footer-statement">{content.footer.statement}</h2>
           </div>
           <div>
@@ -30,7 +30,7 @@ function SiteFooter() {
           </div>
         </div>
         <div className="flex flex-col justify-between gap-3 pt-6 text-[10px] tracking-[.13em] text-[#8aa197] sm:flex-row">
-          <span>© 2024 HIMALAYAN TRAILS · MADE IN KATHMANDU</span>
+          <span>© 2024 HAPPY WORLD · MADE IN KATHMANDU</span>
           <span>TRAVEL WITH CARE · LEAVE A LIGHT TRACE</span>
         </div>
       </div>

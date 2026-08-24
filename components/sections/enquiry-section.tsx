@@ -19,7 +19,7 @@ function EnquirySection({ form, submitted, onSubmit, onSendAnother }: EnquirySec
           <h2 className="mt-5 font-display text-6xl leading-[.88] text-[#f3efe6] sm:text-7xl" data-testid="text-enquiry-title">A good journey<br /><em>starts here.</em></h2>
           <p className="mt-8 max-w-[380px] text-[16px] leading-relaxed text-[#c0d0c4]">Tell us what has been tugging at you. There is no perfect brief required — just a starting point.</p>
           <div className="mt-12 space-y-4 border-t border-[#47665a] pt-6">
-            <a href="mailto:hello@himalayantrails.com" className="contact-line" data-testid="link-email"><Mail size={16} /> hello@himalayantrails.com</a>
+            <a href="mailto:hello@happyworld.com" className="contact-line" data-testid="link-email"><Mail size={16} /> hello@happyworld.com</a>
             <a href="tel:+977984-0177646" className="contact-line" data-testid="link-phone"><Phone size={16} /> +977 984-0177646</a>
           </div>
         </div>
