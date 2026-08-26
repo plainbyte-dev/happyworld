@@ -14,6 +14,19 @@ export type Experience = {
   meta: string;
 };
 
+export type DestinationPackage = {
+  name: string;
+  description: string;
+};
+
+export type TripsCategory = {
+  key: string;
+  label: string;
+  description: string;
+  href: string;
+  destinations: { label: string; href: string; packages: DestinationPackage[] }[];
+};
+
 export const content = {
   brand: {
     name: 'Happy World',
@@ -26,6 +39,106 @@ export const content = {
     { label: 'About Us ', href: '#' },
     { label: 'Contact Us', href: '#journal' },
   ],
+  tripsMenu: [
+    {
+      key: 'nepal-tours',
+      label: 'Nepal Tours',
+      description: 'Heritage, culture and valley life.',
+      href: '#way',
+      destinations: [
+        {
+          label: 'Kathmandu',
+          href: '#way',
+          packages: [
+            { name: 'Heritage City Walk', description: 'A day through Durbar Square, Swayambhunath and the old trade lanes.' },
+            { name: 'Valley Rim Escape', description: 'Two nights above the city, temples and terraced views at dawn.' },
+          ],
+        },
+        {
+          label: 'Pokhara',
+          href: '#way',
+          packages: [
+            { name: 'Phewa Lakeside Retreat', description: 'Slow mornings on the water, Annapurna views without the climb.' },
+            { name: 'Sarangkot Sunrise', description: 'A short pre-dawn drive for the best light on the range.' },
+          ],
+        },
+        {
+          label: 'Chitwan',
+          href: '#way',
+          packages: [
+            { name: 'Jungle Safari Lodge', description: 'Canoe rides and rhino tracking in the national park.' },
+            { name: 'Tharu Village Stay', description: 'A night with a local family, cooking and folk dance included.' },
+          ],
+        },
+        {
+          label: 'Lumbini',
+          href: '#way',
+          packages: [
+            { name: 'Birthplace Pilgrimage', description: 'The Maya Devi Temple and the monastic zone in a quiet single day.' },
+          ],
+        },
+        {
+          label: 'Janakpur',
+          href: '#way',
+          packages: [
+            { name: 'Mithila Heritage Trail', description: 'Painted courtyards, the Janaki Mandir, and local artisan visits.' },
+          ],
+        },
+        {
+          label: 'Ilam',
+          href: '#way',
+          packages: [
+            { name: 'Tea Garden Wander', description: 'Rolling estates, fresh brews, and hill views toward Kanchenjunga.' },
+          ],
+        },
+      ],
+    },
+    {
+      key: 'trekking',
+      label: 'Trekking',
+      description: 'Trails through the high quiet.',
+      href: '#way',
+      destinations: [
+        {
+          label: 'Pokhara',
+          href: '#way',
+          packages: [
+            { name: 'Annapurna Base Camp', description: 'Seven days through rhododendron forest to the amphitheatre of peaks.' },
+            { name: 'Poon Hill Short Trek', description: 'A gentler three-day loop with a classic sunrise viewpoint.' },
+          ],
+        },
+        {
+          label: 'Kathmandu',
+          href: '#way',
+          packages: [
+            { name: 'Langtang Valley Trek', description: 'A quieter Himalayan trail close to the capital, glaciers and yak pastures.' },
+          ],
+        },
+        {
+          label: 'Ilam',
+          href: '#way',
+          packages: [
+            { name: 'Eastern Hills Trail', description: 'A lesser-known ridge walk through tea country and pine forest.' },
+          ],
+        },
+      ],
+    },
+    {
+      key: 'kailash',
+      label: 'Kailash',
+      description: 'The pilgrim roads to Mount Kailash.',
+      href: '#way',
+      destinations: [
+        {
+          label: 'Kathmandu',
+          href: '#way',
+          packages: [
+            { name: 'Kailash Mansarovar Yatra', description: 'The full overland pilgrimage with acclimatisation stops from the capital.' },
+          ],
+        },
+      ],
+    },
+  ] satisfies TripsCategory[],
   heroSlides: [
     {
       eyebrow: 'PILGRIMAGE · Kasilash',
