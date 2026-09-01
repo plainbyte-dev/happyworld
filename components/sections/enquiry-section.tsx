@@ -15,11 +15,11 @@ function EnquirySection({ form, submitted, onSubmit, onSendAnother }: EnquirySec
     <section id="enquiry" className="enquiry-section px-5 py-24 sm:px-8 sm:py-32 lg:px-12">
       <div className="mx-auto grid max-w-[1240px] gap-14 lg:grid-cols-[.85fr_1.15fr] lg:gap-24">
         <div>
-          <p className="eyebrow text-[#e6b96c]">LET'S BEGIN</p>
-          <h2 className="mt-5 font-display text-6xl leading-[.88] text-[#f3efe6] sm:text-7xl" data-testid="text-enquiry-title">A good journey<br /><em>starts here.</em></h2>
-          <p className="mt-8 max-w-[380px] text-[16px] leading-relaxed text-[#c0d0c4]">Tell us what has been tugging at you. There is no perfect brief required — just a starting point.</p>
-          <div className="mt-12 space-y-4 border-t border-[#47665a] pt-6">
-            <a href="mailto:hello@happyworld.com" className="contact-line" data-testid="link-email"><Mail size={16} /> hello@happyworld.com</a>
+          <p className="eyebrow text-[#f4bd48]">CONTACT US</p>
+          <h2 className="mt-5 font-display text-6xl leading-[.88] text-[#ffffff] sm:text-7xl" data-testid="text-enquiry-title">A good journey<br /><em>starts here.</em></h2>
+          <p className="mt-8 max-w-[380px] text-[16px] leading-relaxed text-[#c3c9e6]">Tell us what has been tugging at you. There is no perfect brief required — just a starting point.</p>
+          <div className="mt-12 space-y-4 border-t border-[#2c3e68] pt-6">
+            <a href="mailto:happyworldtt@gmail.com" className="contact-line" data-testid="link-email"><Mail size={16} /> happyworldtt@gmail.com</a>
             <a href="tel:+977984-0177646" className="contact-line" data-testid="link-phone"><Phone size={16} /> +977 984-0177646</a>
           </div>
         </div>
@@ -27,9 +27,9 @@ function EnquirySection({ form, submitted, onSubmit, onSendAnother }: EnquirySec
           {submitted ? (
             <div className="success-state" data-testid="status-enquiry-success">
               <span className="success-icon"><Check size={25} /></span>
-              <p className="eyebrow text-[#e6b96c]">MESSAGE RECEIVED</p>
-              <h3 className="mt-4 font-display text-5xl leading-none text-[#f3efe6]">We will be in touch.</h3>
-              <p className="mt-5 max-w-[360px] text-sm leading-relaxed text-[#c0d0c4]">A real person from our Kathmandu team will write back within two working days. Until then, keep a little space in your day for daydreaming.</p>
+              <p className="eyebrow text-[#f4bd48]">MESSAGE RECEIVED</p>
+              <h3 className="mt-4 font-display text-5xl leading-none text-[#ffffff]">We will be in touch.</h3>
+              <p className="mt-5 max-w-[360px] text-sm leading-relaxed text-[#c3c9e6]">A real person from our Kathmandu team will write back within two working days. Until then, keep a little space in your day for daydreaming.</p>
               <button type="button" className="button-quiet mt-9" onClick={onSendAnother} data-testid="button-send-another">Send another note <ArrowRight size={16} /></button>
             </div>
           ) : (
@@ -45,14 +45,14 @@ function EnquirySection({ form, submitted, onSubmit, onSendAnother }: EnquirySec
                 </div>
                 <FormField control={form.control} name="interest" render={({ field }) => (
                   <FormItem><FormLabel className="form-label">I am drawn to</FormLabel><FormControl>
-                    <div className="relative"><select {...field} className="form-input form-select" data-testid="select-enquiry-interest"><option value="">Choose a direction</option><option value="trekking">Trekking & high trails</option><option value="pilgrimage">Pilgrimage & sacred places</option><option value="heritage">Heritage & culture</option><option value="not-sure">I am not sure yet</option></select><ChevronDown size={15} className="pointer-events-none absolute right-1 top-1/2 -translate-y-1/2 text-[#e6b96c]" /></div>
+                    <div className="relative"><select {...field} className="form-input form-select" data-testid="select-enquiry-interest"><option value="">Choose a direction</option><option value="trekking">Trekking & high trails</option><option value="pilgrimage">Pilgrimage & sacred places</option><option value="heritage">Heritage & culture</option><option value="not-sure">I am not sure yet</option></select><ChevronDown size={15} className="pointer-events-none absolute right-1 top-1/2 -translate-y-1/2 text-[#f4bd48]" /></div>
                   </FormControl><FormMessage /></FormItem>
                 )} />
                 <FormField control={form.control} name="message" render={({ field }) => (
                   <FormItem><FormLabel className="form-label">A little about the journey</FormLabel><FormControl><textarea {...field} className="form-input min-h-[118px] resize-y" placeholder="When are you thinking of coming? Who might be with you? What are you hoping to feel?" data-testid="textarea-enquiry-message" /></FormControl><FormMessage /></FormItem>
                 )} />
                 <FormField control={form.control} name="updates" render={({ field }) => (
-                  <FormItem className="flex items-start gap-3 space-y-0"><FormControl><input type="checkbox" checked={field.value ?? false} onChange={field.onChange} className="form-checkbox mt-1" data-testid="checkbox-enquiry-updates" /></FormControl><FormLabel className="text-xs leading-relaxed text-[#b5c5b9]">Send me occasional notes from the trail. No noise, just good stories.</FormLabel></FormItem>
+                  <FormItem className="flex items-start gap-3 space-y-0"><FormControl><input type="checkbox" checked={field.value ?? false} onChange={field.onChange} className="form-checkbox mt-1" data-testid="checkbox-enquiry-updates" /></FormControl><FormLabel className="text-xs leading-relaxed text-[#c3c9e6]">Send me occasional notes from the trail. No noise, just good stories.</FormLabel></FormItem>
                 )} />
                 <button type="submit" disabled={form.formState.isSubmitting} className="button-coral w-full justify-center sm:w-auto" data-testid="button-submit-enquiry">
                   {form.formState.isSubmitting ? 'Sending…' : 'Send your enquiry'} <ArrowRight size={17} />

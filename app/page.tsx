@@ -7,6 +7,7 @@ import MobileMenu from '@/components/sections/mobile-menu';
 import HeroSection from '@/components/sections/hero-section';
 import IntroductionSection from '@/components/sections/introduction-section';
 import JourneysSection from '@/components/sections/journeys-section';
+import PackageGridSection from '@/components/sections/package-grid-section';
 import HowWeTravelSection from '@/components/sections/how-we-travel-section';
 import EnquirySection from '@/components/sections/enquiry-section';
 import SiteFooter from '@/components/sections/site-footer';
@@ -49,7 +50,7 @@ function Home() {
   };
 
   return (
-    <main className="site-noise overflow-hidden bg-[#f3efe6] text-[#24443c]">
+    <main className="site-noise overflow-hidden bg-[#ffffff] text-[#1a2650]">
       <SiteHeader
         scrolled={scrolled}
         menuOpen={menuOpen}
@@ -69,6 +70,7 @@ function Home() {
       />
       <IntroductionSection />
       <JourneysSection onSelectInterest={scrollToEnquiry} />
+      <PackageGridSection />
       <HowWeTravelSection />
       <EnquirySection
         form={form}

@@ -1,8 +1,15 @@
-function BrandMark({ inverse = false }: { inverse?: boolean }) {
+import Image from 'next/image';
+
+function BrandMark() {
   return (
-    <span className={`brand-mark ${inverse ? 'brand-mark-inverse' : ''}`} aria-hidden="true">
-      <span className="brand-mark-top">H</span><span className="brand-mark-bottom">W</span>
-    </span>
+    <Image
+      src="/logo/logo.png"
+      alt="Happy World Tours & Travel"
+      width={1536}
+      height={1024}
+      className="brand-logo"
+      priority
+    />
   );
 }
 

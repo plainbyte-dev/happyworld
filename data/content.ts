@@ -24,7 +24,8 @@ export type TripsCategory = {
   label: string;
   description: string;
   href: string;
-  destinations: { label: string; href: string; packages: DestinationPackage[] }[];
+  image: string;
+  destinations: { label: string; href: string; blurb: string; packages: DestinationPackage[] }[];
 };
 
 export const content = {
@@ -37,59 +38,51 @@ export const content = {
     { label: 'Home', href: '/' },
     { label: 'Trips ', href: '#way' },
     { label: 'About Us ', href: '#' },
-    { label: 'Contact Us', href: '#journal' },
+    { label: 'Contact Us', href: '/contact' },
   ],
   tripsMenu: [
     {
       key: 'nepal-tours',
       label: 'Nepal Tours',
       description: 'Heritage, culture and valley life.',
-      href: '#way',
+      href: '/tour-types/nepal-tours',
+      image: '/content-images/NepalTour.png',
       destinations: [
         {
           label: 'Kathmandu',
           href: '#way',
-          packages: [
-            { name: 'Heritage City Walk', description: 'A day through Durbar Square, Swayambhunath and the old trade lanes.' },
-            { name: 'Valley Rim Escape', description: 'Two nights above the city, temples and terraced views at dawn.' },
-          ],
+          blurb: "The valley's beating heart — UNESCO temple squares, incense-filled lanes and centuries of Newari craft, all within a short walk of each other.",
+          packages: [],
         },
         {
           label: 'Pokhara',
           href: '#way',
-          packages: [
-            { name: 'Phewa Lakeside Retreat', description: 'Slow mornings on the water, Annapurna views without the climb.' },
-            { name: 'Sarangkot Sunrise', description: 'A short pre-dawn drive for the best light on the range.' },
-          ],
+          blurb: 'A lakeside town under the Annapurna range, where the mountains meet still water and the pace finally slows.',
+          packages: [],
         },
         {
           label: 'Chitwan',
           href: '#way',
-          packages: [
-            { name: 'Jungle Safari Lodge', description: 'Canoe rides and rhino tracking in the national park.' },
-            { name: 'Tharu Village Stay', description: 'A night with a local family, cooking and folk dance included.' },
-          ],
+          blurb: 'Subtropical lowland forest along the Rapti River, home to rhinos, gharial crocodiles and a different rhythm of travel.',
+          packages: [],
         },
         {
           label: 'Lumbini',
           href: '#way',
-          packages: [
-            { name: 'Birthplace Pilgrimage', description: 'The Maya Devi Temple and the monastic zone in a quiet single day.' },
-          ],
+          blurb: 'The birthplace of the Buddha — a quiet monastic zone that draws pilgrims from across Asia.',
+          packages: [],
         },
         {
           label: 'Janakpur',
           href: '#way',
-          packages: [
-            { name: 'Mithila Heritage Trail', description: 'Painted courtyards, the Janaki Mandir, and local artisan visits.' },
-          ],
+          blurb: 'A city of painted courtyards and terracotta shrines, spiritual home of the Mithila people.',
+          packages: [],
         },
         {
           label: 'Ilam',
           href: '#way',
-          packages: [
-            { name: 'Tea Garden Wander', description: 'Rolling estates, fresh brews, and hill views toward Kanchenjunga.' },
-          ],
+          blurb: "Rolling tea estates and hill villages in Nepal's far east, with Kanchenjunga on a clear horizon.",
+          packages: [],
         },
       ],
     },
@@ -97,11 +90,13 @@ export const content = {
       key: 'trekking',
       label: 'Trekking',
       description: 'Trails through the high quiet.',
-      href: '#way',
+      href: '/tour-types/trekking',
+      image: 'https://images.pexels.com/photos/1271619/pexels-photo-1271619.jpeg?auto=compress&cs=tinysrgb&w=2200',
       destinations: [
         {
           label: 'Pokhara',
           href: '#way',
+          blurb: 'The trailhead for the Annapurna range — base camps, rhododendron forest and some of the most photographed peaks in the Himalaya.',
           packages: [
             { name: 'Annapurna Base Camp', description: 'Seven days through rhododendron forest to the amphitheatre of peaks.' },
             { name: 'Poon Hill Short Trek', description: 'A gentler three-day loop with a classic sunrise viewpoint.' },
@@ -110,6 +105,7 @@ export const content = {
         {
           label: 'Kathmandu',
           href: '#way',
+          blurb: "Gateway to the quieter trails north of the valley, including Langtang's glaciers and yak pastures.",
           packages: [
             { name: 'Langtang Valley Trek', description: 'A quieter Himalayan trail close to the capital, glaciers and yak pastures.' },
           ],
@@ -117,6 +113,7 @@ export const content = {
         {
           label: 'Ilam',
           href: '#way',
+          blurb: 'Ridge walks through tea country and pine forest, a gentler alternative to the high Himalaya.',
           packages: [
             { name: 'Eastern Hills Trail', description: 'A lesser-known ridge walk through tea country and pine forest.' },
           ],
@@ -127,11 +124,13 @@ export const content = {
       key: 'kailash',
       label: 'Kailash',
       description: 'The pilgrim roads to Mount Kailash.',
-      href: '#way',
+      href: '/tour-types/kailash',
+      image: '/content-images/Kailash.png',
       destinations: [
         {
           label: 'Kathmandu',
           href: '#way',
+          blurb: 'Starting point for the overland yatra to Mount Kailash — permits, acclimatisation and the road to the plateau all begin here.',
           packages: [
             { name: 'Kailash Mansarovar Yatra', description: 'The full overland pilgrimage with acclimatisation stops from the capital.' },
           ],
@@ -209,7 +208,8 @@ export const content = {
   },
   footer: {
     statement: 'The trail stays with you.',
-    email: 'hello@happyworld.com',
-    phone: '+977 1 452 1098',
+    email: 'happyworldtt@gmail.com',
+    phone: '+977 984-0177646',
+    whatsapp: '9779840177646',
   },
 } as const;
