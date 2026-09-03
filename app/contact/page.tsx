@@ -1,3 +1,4 @@
+import { Suspense } from 'react';
 import ContactPageClient from './contact-page-client';
 
 export const metadata = {
@@ -6,7 +7,11 @@ export const metadata = {
 };
 
 function ContactPage() {
-  return <ContactPageClient />;
+  return (
+    <Suspense fallback={null}>
+      <ContactPageClient />
+    </Suspense>
+  );
 }
 
 export default ContactPage;

@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import { useSearchParams } from 'next/navigation';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { Mail, MapPin, Phone } from 'lucide-react';
@@ -44,10 +45,12 @@ const contactMethods = [
 ];
 
 function ContactPageClient() {
+  const searchParams = useSearchParams();
+  const prefillMessage = searchParams.get('message') ?? '';
   const [submitted, setSubmitted] = useState(false);
   const form = useForm<EnquiryValues>({
     resolver: zodResolver(enquirySchema),
-    defaultValues: { name: '', email: '', interest: '', message: '', updates: false },
+    defaultValues: { name: '', email: '', interest: '', message: prefillMessage, updates: false },
   });
 
   const submitEnquiry = (_values: EnquiryValues) => {

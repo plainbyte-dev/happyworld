@@ -98,11 +98,11 @@ export default function AltitudeSection({ altitudeProfile, itinerary }: Altitude
       {/* Acclimatization Tips */}
       <div className="reveal-up stagger-2">
         <h3 className="font-bold text-sm uppercase tracking-[0.3em] text-muted-foreground mb-6">Acclimatisation Tips</h3>
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
           {acclimatizationTips.map((tip, i) => (
             <div key={tip.title} className={`glass-card rounded-2xl p-5 flex gap-4 items-start reveal-up stagger-${i + 1}`}>
-              <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0">
-                <Icon name={tip.icon} size={18} className="text-primary" />
+              <div className="w-10 h-10 rounded-xl bg-[#2f5f9e]/10 flex items-center justify-center flex-shrink-0">
+                <Icon name={tip.icon} size={18} className="text-[#2f5f9e]" />
               </div>
               <div>
                 <p className="font-bold text-foreground text-sm mb-1">{tip.title}</p>

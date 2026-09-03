@@ -509,6 +509,9 @@
 .faq-answer.open { grid-template-rows: 1fr; }
 .faq-answer.open > div { opacity: 1; transition: opacity .35s ease .1s; }
 
+@keyframes split-panel-fade-in { from { opacity: 0; } to { opacity: 1; } }
+.split-panel-fade { animation: split-panel-fade-in 200ms ease-in both; }
+
 .altitude-bar { transition: width 1s cubic-bezier(.22,1,.36,1); }
 
 .sticky-booking { position: sticky; top: 140px; align-self: start; display: flex; flex-direction: column; gap: 16px; }

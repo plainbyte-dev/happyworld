@@ -9,9 +9,8 @@ import MobileMenu from '@/components/sections/mobile-menu';
 import SiteFooter from '@/components/sections/site-footer';
 import PackageHero from '@/app/packages/components/PackageHero';
 import GallerySection from '@/app/packages/components/GallerySection';
-import ItenarySection from '@/app/packages/components/ItenarySection';
+import ItinerarySplitPanel from '@/app/packages/components/ItinerarySplitPanel';
 import WhenToVisit from '@/app/packages/components/WhenToVisit';
-import AltitudeSection from '@/app/packages/components/AltitudeSection';
 import FaqSection from '@/app/packages/components/FaqSection';
 import BookingSidebar from '@/app/packages/components/BookingSidebar';
 import type { PackageDetail } from '@/lib/packages';
@@ -49,19 +48,21 @@ function PackageDetailView({ detail, related }: PackageDetailViewProps) {
         <div className="pkg-main flex flex-col gap-16 sm:gap-20">
           <GallerySection images={detail.gallery} />
           <WhenToVisit bestTime={detail.bestTime} />
-          <ItenarySection
-            itinerary={detail.itinerary}
-            destinationLabel={detail.destinationLabel}
-            heroImage={detail.heroImage}
-            packageName={detail.name}
-            duration={detail.quickFacts.duration}
-          />
-          <AltitudeSection altitudeProfile={detail.altitudeProfile} itinerary={detail.itinerary} />
         </div>
 
         <aside className="pkg-sidebar">
           <BookingSidebar detail={detail} onEnquire={goToEnquiry} />
         </aside>
+      </div>
+
+      <div className="max-w-360 mx-auto px-5 pb-20">
+        <ItinerarySplitPanel
+          itinerary={detail.itinerary}
+          destinationLabel={detail.destinationLabel}
+          heroImage={detail.heroImage}
+          packageName={detail.name}
+          duration={detail.quickFacts.duration}
+        />
       </div>
 
       <div className="max-w-360 mx-auto px-5 pb-20">
