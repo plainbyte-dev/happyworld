@@ -25,6 +25,10 @@ const CHART_PAD_X = 24;
 const CHART_PAD_TOP = 32;
 const CHART_PAD_BOTTOM = 36;
 
+// Live elevation lookups are unreliable right now (upstream API flakiness) —
+// keep the code in place but show the static profile until that's sorted out.
+const LIVE_ELEVATION_ENABLED = false;
+
 export default function AltitudeSection({ altitudeProfile, itinerary }: AltitudeSectionProps) {
   const sectionRef = useRef<HTMLDivElement>(null);
   const [drawn, setDrawn] = useState(false);
@@ -35,7 +39,7 @@ export default function AltitudeSection({ altitudeProfile, itinerary }: Altitude
 
   const coords = useMemo(
     () =>
-      itinerary.every((day) => typeof day.lat === 'number' && typeof day.lng === 'number')
+      LIVE_ELEVATION_ENABLED && itinerary.every((day) => typeof day.lat === 'number' && typeof day.lng === 'number')
         ? itinerary.map((day) => ({ lat: day.lat as number, lng: day.lng as number }))
         : null,
     [itinerary],

@@ -13,6 +13,7 @@ import EnquirySection from '@/components/sections/enquiry-section';
 import SiteFooter from '@/components/sections/site-footer';
 import { content } from '@/data/content';
 import { enquirySchema, type EnquiryValues } from '@/lib/enquiry-schema';
+import { buildEnquiryWhatsappUrl } from '@/lib/whatsapp';
 
 function Home() {
   const [scrolled, setScrolled] = useState(false);
@@ -44,7 +45,8 @@ function Home() {
     document.getElementById('enquiry')?.scrollIntoView({ behavior: 'smooth' });
   };
 
-  const submitEnquiry = (_values: EnquiryValues) => {
+  const submitEnquiry = (values: EnquiryValues) => {
+    window.open(buildEnquiryWhatsappUrl(content.footer.whatsapp, values), '_blank', 'noopener,noreferrer');
     setSubmitted(true);
     form.reset();
   };

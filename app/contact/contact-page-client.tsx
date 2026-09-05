@@ -10,6 +10,7 @@ import SiteChrome from '@/components/site-chrome';
 import EnquirySection from '@/components/sections/enquiry-section';
 import { content } from '@/data/content';
 import { enquirySchema, type EnquiryValues } from '@/lib/enquiry-schema';
+import { buildEnquiryWhatsappUrl } from '@/lib/whatsapp';
 
 const contactMethods = [
   {
@@ -53,7 +54,8 @@ function ContactPageClient() {
     defaultValues: { name: '', email: '', interest: '', message: prefillMessage, updates: false },
   });
 
-  const submitEnquiry = (_values: EnquiryValues) => {
+  const submitEnquiry = (values: EnquiryValues) => {
+    window.open(buildEnquiryWhatsappUrl(content.footer.whatsapp, values), '_blank', 'noopener,noreferrer');
     setSubmitted(true);
     form.reset();
   };
