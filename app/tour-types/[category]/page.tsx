@@ -15,8 +15,9 @@ export async function generateMetadata({ params }: { params: Promise<{ category:
   const category = content.tripsMenu.find((c) => c.key === categoryKey);
   if (!category) return {};
   return {
-    title: `${category.label} — Happy World`,
+    title: `${category.label} — Nepal Travel Packages`,
     description: category.description,
+    alternates: { canonical: `/tour-types/${categoryKey}` },
   };
 }
 

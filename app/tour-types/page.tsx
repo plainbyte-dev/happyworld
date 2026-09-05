@@ -5,8 +5,9 @@ import SiteChrome from '@/components/site-chrome';
 import { content } from '@/data/content';
 
 export const metadata = {
-  title: 'Tour Types — Happy World',
-  description: 'Trekking, pilgrimage and heritage journeys through Nepal — find the kind of trip you\'re after.',
+  title: 'Nepal Travel Packages & Tour Types',
+  description: 'Trekking, pilgrimage and heritage travel packages in Nepal from Happy World Travel Tours — find the kind of trip you\'re after.',
+  alternates: { canonical: '/tour-types' },
 };
 
 function TourTypesPage() {

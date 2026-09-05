@@ -13,16 +13,24 @@ const geistMono = Geist_Mono({
 });
 
 const SITE_URL = "https://www.happyworldtt.com";
-const SITE_NAME = "Happy World Tours & Travel";
-const SITE_TITLE = "Happy World Tours & Travel | Nepal Trekking, Pilgrimage & Heritage Trips";
+const SITE_NAME = "Happy World Travel Tours";
+const SITE_TITLE = "Happy World Travel Tours | Nepal Travel Packages, Trekking & Pilgrimage Trips";
 const SITE_DESCRIPTION =
-  "Kathmandu-based tour operator running trekking, pilgrimage and heritage journeys across Nepal — Annapurna Base Camp, Kailash Mansarovar Yatra, Everest region trails and more, planned by a local team.";
+  "Happy World Travel Tours is a Kathmandu-based tour operator offering travel packages in Nepal — trekking, pilgrimage and heritage journeys including Annapurna Base Camp, Kailash Mansarovar Yatra and Everest region trails, planned by a local team.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
-  title: SITE_TITLE,
+  title: {
+    default: SITE_TITLE,
+    template: `%s | ${SITE_NAME}`,
+  },
   description: SITE_DESCRIPTION,
   keywords: [
+    "Happy World Travel Tours",
+    "Happy World Tours and Travel",
+    "travel packages in Nepal",
+    "Nepal travel packages",
+    "Nepal tour packages",
     "Nepal tours",
     "Nepal trekking",
     "Annapurna Base Camp trek",
@@ -32,6 +40,7 @@ export const metadata: Metadata = {
     "Nepal heritage tours",
     "Himalaya trekking packages",
     "Pokhara trekking",
+    "best travel agency in Nepal",
   ],
   authors: [{ name: SITE_NAME, url: SITE_URL }],
   creator: SITE_NAME,
@@ -74,9 +83,29 @@ export const metadata: Metadata = {
     description: SITE_DESCRIPTION,
     images: ["/logo/logo.png"],
   },
-  icons: {
-    icon: "/favicon.ico",
+};
+
+const structuredData = {
+  "@context": "https://schema.org",
+  "@type": "TravelAgency",
+  name: SITE_NAME,
+  alternateName: "Happy World Tours & Travel",
+  description: SITE_DESCRIPTION,
+  url: SITE_URL,
+  logo: `${SITE_URL}/logo/logo.png`,
+  image: `${SITE_URL}/logo/logo.png`,
+  telephone: "+977-984-0177646",
+  email: "happyworldtt@gmail.com",
+  address: {
+    "@type": "PostalAddress",
+    addressLocality: "Kathmandu",
+    addressCountry: "NP",
   },
+  areaServed: {
+    "@type": "Country",
+    name: "Nepal",
+  },
+  priceRange: "$$",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
@@ -85,6 +114,12 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+        />
+      </head>
       <body className="min-h-full flex flex-col">{children}</body>
     </html>
   );

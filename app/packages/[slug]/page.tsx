@@ -12,8 +12,9 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const detail = await getPackageBySlug(slug);
   if (!detail) return {};
   return {
-    title: `${detail.name} — Happy World`,
+    title: detail.name,
     description: detail.description,
+    alternates: { canonical: `/packages/${slug}` },
   };
 }
 
