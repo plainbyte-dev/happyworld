@@ -26,7 +26,7 @@ function HeroSection({ slide, onSelectSlide, onMouseEnter, onMouseLeave }: HeroS
       <div className="absolute inset-0 -z-10 bg-[linear-gradient(0deg,rgba(17,39,33,.65),transparent_45%)]" />
       <div className="mx-auto flex h-full max-w-[1440px] flex-col justify-between px-5 pb-10 pt-32 sm:px-8 sm:pb-14 lg:px-12 lg:pb-16">
         <div className="max-w-[620px]">
-          <p className="eyebrow text-[#f4bd48]" data-testid="text-hero-eyebrow">{current.eyebrow}</p>
+          <p className="eyebrow text-[#c9a227]" data-testid="text-hero-eyebrow">{current.eyebrow}</p>
           <h1 className="hero-title whitespace-pre-line" data-testid="text-hero-title">{current.title}</h1>
         </div>
         <div className="mt-auto flex flex-col gap-8 pt-12 sm:flex-row sm:items-end sm:justify-between">

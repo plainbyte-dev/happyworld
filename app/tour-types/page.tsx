@@ -39,7 +39,7 @@ function TourTypesPage() {
               <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-black/10" />
 
               <div className="absolute inset-x-0 bottom-0 p-6 sm:p-7">
-                <p className="text-[10px] font-bold uppercase tracking-widest text-[#f4bd48]">
+                <p className="text-[10px] font-bold uppercase tracking-widest text-[#c9a227]">
                   {category.destinations.length} destination{category.destinations.length > 1 ? 's' : ''}
                 </p>
                 <h2 className="mt-3 font-serif text-3xl font-bold text-white">{category.label}</h2>

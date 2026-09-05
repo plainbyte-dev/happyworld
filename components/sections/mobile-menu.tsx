@@ -11,7 +11,7 @@ function MobileMenu({ open, onNavigate, onEnquire }: MobileMenuProps) {
   return (
     <div className={`mobile-menu ${open ? 'mobile-menu-open' : ''}`} aria-hidden={!open}>
       <div className="mobile-menu-inner">
-        <p className="eyebrow text-[#f4bd48]">NEPAL · SINCE 2008</p>
+        <p className="eyebrow text-[#c9a227]">NEPAL · SINCE 2008</p>
         <nav className="mt-12 flex flex-col gap-5" aria-label="Mobile navigation">
           {content.nav.map((item, index) => (
             <a key={item.href} href={item.href} onClick={onNavigate} className="mobile-nav-link" data-testid={`link-mobile-${index}`}>

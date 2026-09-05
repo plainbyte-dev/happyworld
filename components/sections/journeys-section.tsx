@@ -11,7 +11,7 @@ function JourneysSection({ onSelectInterest }: JourneysSectionProps) {
       <div className="mx-auto max-w-[1440px]">
         <div className="mb-10 flex flex-col justify-between gap-5 sm:flex-row sm:items-end">
           <div>
-            <p className="eyebrow text-[#f4bd48]">WAYS IN</p>
+            <p className="eyebrow text-[#c9a227]">WAYS IN</p>
             <h2 className="mt-3 font-display text-5xl leading-[.93] text-[#ffffff] sm:text-6xl" data-testid="text-journeys-heading">Choose a direction.</h2>
           </div>
           <p className="max-w-[285px] text-sm leading-relaxed text-[#b7bfd8]">Different routes into the same feeling: more present, more connected, more alive.</p>
@@ -23,7 +23,7 @@ function JourneysSection({ onSelectInterest }: JourneysSectionProps) {
               <div className="experience-overlay" />
               <div className="absolute inset-x-0 bottom-0 p-5 sm:p-7">
                 <div className="flex items-center justify-between">
-                  <span className="eyebrow text-[#f4bd48]">{experience.kind}</span>
+                  <span className="eyebrow text-[#c9a227]">{experience.kind}</span>
                 </div>
                 <h3 className="mt-3 font-display text-[2.35rem] leading-none text-[#ffffff]">{experience.title}</h3>
                 <p className="mt-3 max-w-[260px] text-sm leading-relaxed text-[#dfe2f0]">{experience.detail}</p>

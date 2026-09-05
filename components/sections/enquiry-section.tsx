@@ -15,7 +15,7 @@ function EnquirySection({ form, submitted, onSubmit, onSendAnother }: EnquirySec
     <section id="enquiry" className="enquiry-section px-5 py-24 sm:px-8 sm:py-32 lg:px-12">
       <div className="mx-auto grid max-w-[1240px] gap-14 lg:grid-cols-[.85fr_1.15fr] lg:gap-24">
         <div>
-          <p className="eyebrow text-[#f4bd48]">CONTACT US</p>
+          <p className="eyebrow text-[#c9a227]">CONTACT US</p>
           <h2 className="mt-5 font-display text-6xl leading-[.88] text-[#ffffff] sm:text-7xl" data-testid="text-enquiry-title">A good journey<br /><em>starts here.</em></h2>
           <p className="mt-8 max-w-[380px] text-[16px] leading-relaxed text-[#c3c9e6]">Tell us what has been tugging at you. There is no perfect brief required — just a starting point.</p>
           <div className="mt-12 space-y-4 border-t border-[#2c3e68] pt-6">
@@ -27,7 +27,7 @@ function EnquirySection({ form, submitted, onSubmit, onSendAnother }: EnquirySec
           {submitted ? (
             <div className="success-state" data-testid="status-enquiry-success">
               <span className="success-icon"><Check size={25} /></span>
-              <p className="eyebrow text-[#f4bd48]">MESSAGE RECEIVED</p>
+              <p className="eyebrow text-[#c9a227]">MESSAGE RECEIVED</p>
               <h3 className="mt-4 font-display text-5xl leading-none text-[#ffffff]">We will be in touch.</h3>
               <p className="mt-5 max-w-[360px] text-sm leading-relaxed text-[#c3c9e6]">A real person from our Kathmandu team will write back within two working days. Until then, keep a little space in your day for daydreaming.</p>
               <button type="button" className="button-quiet mt-9" onClick={onSendAnother} data-testid="button-send-another">Send another note <ArrowRight size={16} /></button>
@@ -45,7 +45,7 @@ function EnquirySection({ form, submitted, onSubmit, onSendAnother }: EnquirySec
                 </div>
                 <FormField control={form.control} name="interest" render={({ field }) => (
                   <FormItem><FormLabel className="form-label">I am drawn to</FormLabel><FormControl>
-                    <div className="relative"><select {...field} className="form-input form-select" data-testid="select-enquiry-interest"><option value="">Choose a direction</option><option value="trekking">Trekking & high trails</option><option value="pilgrimage">Pilgrimage & sacred places</option><option value="heritage">Heritage & culture</option><option value="not-sure">I am not sure yet</option></select><ChevronDown size={15} className="pointer-events-none absolute right-1 top-1/2 -translate-y-1/2 text-[#f4bd48]" /></div>
+                    <div className="relative"><select {...field} className="form-input form-select" data-testid="select-enquiry-interest"><option value="">Choose a direction</option><option value="trekking">Trekking & high trails</option><option value="pilgrimage">Pilgrimage & sacred places</option><option value="heritage">Heritage & culture</option><option value="not-sure">I am not sure yet</option></select><ChevronDown size={15} className="pointer-events-none absolute right-1 top-1/2 -translate-y-1/2 text-[#c9a227]" /></div>
                   </FormControl><FormMessage /></FormItem>
                 )} />
                 <FormField control={form.control} name="message" render={({ field }) => (

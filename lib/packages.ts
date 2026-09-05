@@ -9,6 +9,8 @@ export type ItineraryDay = {
   transport: string;
   image?: { src: string; alt: string };
   keyActivities?: string[];
+  lat?: number;
+  lng?: number;
 };
 
 export type GalleryImage = {
@@ -626,13 +628,13 @@ const overrides: Record<string, Partial<PackageDetail>> = {
     quickFacts: { duration: '7 Days / 6 Nights', maxAltitude: '4,130 M', difficulty: 'Moderate', groupSize: '2–12 travellers' },
     bestTime: bestTimeForCategory('trekking'),
     itinerary: [
-      { day: 1, title: 'Pokhara to Nayapul, trek to Tikhedhunga', detail: 'A scenic drive from Pokhara to the trailhead at Nayapul, then a gentle first walk along the Modi Khola to Tikhedhunga.', meals: 'Breakfast, Lunch, Dinner', stay: 'Tikhedhunga — teahouse', transport: 'Private vehicle, on foot' },
-      { day: 2, title: 'Tikhedhunga to Ghorepani', detail: 'A demanding climb of stone steps through forest to Ghorepani, with Annapurna South and Dhaulagiri appearing above the ridgeline.', meals: 'Breakfast, Lunch, Dinner', stay: 'Ghorepani — teahouse', transport: 'On foot' },
-      { day: 3, title: 'Poon Hill sunrise, on to Tadapani', detail: 'A pre-dawn climb to Poon Hill for sunrise over the Annapurna and Dhaulagiri ranges, then a long ridge walk to Tadapani.', meals: 'Breakfast, Lunch, Dinner', stay: 'Tadapani — teahouse', transport: 'On foot' },
-      { day: 4, title: 'Tadapani to Himalaya via Chhomrong', detail: 'Descend into the Modi Khola gorge and climb steadily into the Sanctuary, forest giving way to bamboo and open valley walls.', meals: 'Breakfast, Lunch, Dinner', stay: 'Himalaya — teahouse', transport: 'On foot' },
-      { day: 5, title: 'Himalaya to Annapurna Base Camp', detail: 'The final climb past Machapuchare Base Camp into the amphitheatre of peaks, arriving at ABC with the afternoon light on the summits.', meals: 'Breakfast, Lunch, Dinner', stay: 'Annapurna Base Camp — teahouse', transport: 'On foot' },
-      { day: 6, title: 'Descend to Jhinu Danda', detail: 'A long descent back through the Sanctuary, ending with an evening soak in the hot springs above the Modi Khola.', meals: 'Breakfast, Lunch, Dinner', stay: 'Jhinu Danda — teahouse', transport: 'On foot' },
-      { day: 7, title: 'Jhinu Danda to Pokhara', detail: 'A final walk down to the roadhead at Siwai and a drive back to Pokhara, with the afternoon free by the lake.', meals: 'Breakfast', stay: '—', transport: 'On foot, private vehicle' },
+      { day: 1, title: 'Pokhara to Nayapul, trek to Tikhedhunga', detail: 'A scenic drive from Pokhara to the trailhead at Nayapul, then a gentle first walk along the Modi Khola to Tikhedhunga.', meals: 'Breakfast, Lunch, Dinner', stay: 'Tikhedhunga — teahouse', transport: 'Private vehicle, on foot', lat: 28.3833, lng: 83.6667 },
+      { day: 2, title: 'Tikhedhunga to Ghorepani', detail: 'A demanding climb of stone steps through forest to Ghorepani, with Annapurna South and Dhaulagiri appearing above the ridgeline.', meals: 'Breakfast, Lunch, Dinner', stay: 'Ghorepani — teahouse', transport: 'On foot', lat: 28.4, lng: 83.6833 },
+      { day: 3, title: 'Poon Hill sunrise, on to Tadapani', detail: 'A pre-dawn climb to Poon Hill for sunrise over the Annapurna and Dhaulagiri ranges, then a long ridge walk to Tadapani.', meals: 'Breakfast, Lunch, Dinner', stay: 'Tadapani — teahouse', transport: 'On foot', lat: 28.3667, lng: 83.7167 },
+      { day: 4, title: 'Tadapani to Himalaya via Chhomrong', detail: 'Descend into the Modi Khola gorge and climb steadily into the Sanctuary, forest giving way to bamboo and open valley walls.', meals: 'Breakfast, Lunch, Dinner', stay: 'Himalaya — teahouse', transport: 'On foot', lat: 28.4931, lng: 83.7994 },
+      { day: 5, title: 'Himalaya to Annapurna Base Camp', detail: 'The final climb past Machapuchare Base Camp into the amphitheatre of peaks, arriving at ABC with the afternoon light on the summits.', meals: 'Breakfast, Lunch, Dinner', stay: 'Annapurna Base Camp — teahouse', transport: 'On foot', lat: 28.5308, lng: 83.8203 },
+      { day: 6, title: 'Descend to Jhinu Danda', detail: 'A long descent back through the Sanctuary, ending with an evening soak in the hot springs above the Modi Khola.', meals: 'Breakfast, Lunch, Dinner', stay: 'Jhinu Danda — teahouse', transport: 'On foot', lat: 28.3833, lng: 83.7667 },
+      { day: 7, title: 'Jhinu Danda to Pokhara', detail: 'A final walk down to the roadhead at Siwai and a drive back to Pokhara, with the afternoon free by the lake.', meals: 'Breakfast', stay: '—', transport: 'On foot, private vehicle', lat: 28.2096, lng: 83.9856 },
     ],
     altitudeProfile: [1070, 2860, 3210, 2920, 4130, 2170, 850],
     guide: {
@@ -664,22 +666,22 @@ const overrides: Record<string, Partial<PackageDetail>> = {
     quickFacts: { duration: '16 Days / 15 Nights', maxAltitude: '5,630 M', difficulty: 'Challenging', groupSize: '2–12 travellers' },
     bestTime: bestTimeForCategory('kailash'),
     itinerary: [
-      { day: 1, title: 'Arrival in Kathmandu', detail: 'Arrive in Kathmandu, briefing and final permit checks with the group.', meals: 'Dinner', stay: 'Kathmandu — hotel', transport: 'Private vehicle' },
-      { day: 2, title: 'Kathmandu to Kerung', detail: 'Cross the Nepal–China border at Rasuwagadhi and drive up to Kerung, gaining altitude for the first time.', meals: 'Breakfast, Lunch, Dinner', stay: 'Kerung — guesthouse', transport: 'Support vehicle' },
-      { day: 3, title: 'Acclimatisation in Kerung', detail: 'A rest day in Kerung to adjust before the plateau, with short walks to ease the transition.', meals: 'Breakfast, Lunch, Dinner', stay: 'Kerung — guesthouse', transport: 'On foot' },
-      { day: 4, title: 'Kerung to Saga', detail: 'Onto the Tibetan plateau proper, a long overland day with the landscape opening into wide brown hills.', meals: 'Breakfast, Lunch, Dinner', stay: 'Saga — guesthouse', transport: 'Support vehicle' },
-      { day: 5, title: 'Saga to Lake Mansarovar', detail: 'Drive to the shores of Lake Mansarovar, the sacred lake at the foot of Kailash, with time for a ritual circuit.', meals: 'Breakfast, Lunch, Dinner', stay: 'Lake Mansarovar — guesthouse', transport: 'Support vehicle' },
-      { day: 6, title: 'Rest day at Lake Mansarovar', detail: 'A full day by the lake for rest, ritual bathing, and acclimatisation ahead of the parikrama.', meals: 'Breakfast, Lunch, Dinner', stay: 'Lake Mansarovar — guesthouse', transport: 'On foot' },
-      { day: 7, title: 'To Darchen, start of the Kailash Parikrama', detail: 'Drive to Darchen, the traditional starting point of the pilgrimage circuit around Mount Kailash.', meals: 'Breakfast, Lunch, Dinner', stay: 'Darchen — guesthouse', transport: 'Support vehicle' },
-      { day: 8, title: 'Parikrama Day 1 — Darchen to Dirapuk', detail: 'The first day of the circuit, walking beneath the north face of Kailash to the camp at Dirapuk.', meals: 'Breakfast, Lunch, Dinner', stay: 'Dirapuk — guesthouse', transport: 'On foot' },
-      { day: 9, title: 'Parikrama Day 2 — Dolma La Pass to Zutulpuk', detail: 'The high point of the yatra: a pre-dawn start over the 5,630m Dolma La Pass, then down to Zutulpuk.', meals: 'Breakfast, Lunch, Dinner', stay: 'Zutulpuk — guesthouse', transport: 'On foot' },
-      { day: 10, title: 'Parikrama Day 3 — Zutulpuk to Darchen', detail: 'A gentler final descent back to Darchen, completing the circuit.', meals: 'Breakfast, Lunch, Dinner', stay: 'Darchen — guesthouse', transport: 'On foot' },
-      { day: 11, title: 'Darchen to Saga', detail: 'Begin the overland return, retracing the route back toward the border.', meals: 'Breakfast, Lunch, Dinner', stay: 'Saga — guesthouse', transport: 'Support vehicle' },
-      { day: 12, title: 'Saga to Kerung', detail: 'Continue the return journey across the plateau to Kerung.', meals: 'Breakfast, Lunch, Dinner', stay: 'Kerung — guesthouse', transport: 'Support vehicle' },
-      { day: 13, title: 'Kerung to Kathmandu', detail: 'Cross back into Nepal at Rasuwagadhi and descend to Kathmandu, the altitude falling away behind you.', meals: 'Breakfast, Lunch, Dinner', stay: 'Kathmandu — hotel', transport: 'Support vehicle' },
-      { day: 14, title: 'Contingency day', detail: 'A buffer day held in reserve for weather or border delays on the plateau.', meals: 'Breakfast, Lunch, Dinner', stay: 'Kathmandu — hotel', transport: '—' },
-      { day: 15, title: 'Free day in Kathmandu', detail: 'A last day in the valley to rest, shop, or visit Boudhanath before departure.', meals: 'Breakfast', stay: 'Kathmandu — hotel', transport: 'Private vehicle' },
-      { day: 16, title: 'Departure', detail: 'Transfer to the airport for your onward flight.', meals: 'Breakfast', stay: '—', transport: 'Private vehicle' },
+      { day: 1, title: 'Arrival in Kathmandu', detail: 'Arrive in Kathmandu, briefing and final permit checks with the group.', meals: 'Dinner', stay: 'Kathmandu — hotel', transport: 'Private vehicle', lat: 27.7172, lng: 85.324 },
+      { day: 2, title: 'Kathmandu to Kerung', detail: 'Cross the Nepal–China border at Rasuwagadhi and drive up to Kerung, gaining altitude for the first time.', meals: 'Breakfast, Lunch, Dinner', stay: 'Kerung — guesthouse', transport: 'Support vehicle', lat: 28.95, lng: 85.3167 },
+      { day: 3, title: 'Acclimatisation in Kerung', detail: 'A rest day in Kerung to adjust before the plateau, with short walks to ease the transition.', meals: 'Breakfast, Lunch, Dinner', stay: 'Kerung — guesthouse', transport: 'On foot', lat: 28.95, lng: 85.3167 },
+      { day: 4, title: 'Kerung to Saga', detail: 'Onto the Tibetan plateau proper, a long overland day with the landscape opening into wide brown hills.', meals: 'Breakfast, Lunch, Dinner', stay: 'Saga — guesthouse', transport: 'Support vehicle', lat: 29.3333, lng: 85.2333 },
+      { day: 5, title: 'Saga to Lake Mansarovar', detail: 'Drive to the shores of Lake Mansarovar, the sacred lake at the foot of Kailash, with time for a ritual circuit.', meals: 'Breakfast, Lunch, Dinner', stay: 'Lake Mansarovar — guesthouse', transport: 'Support vehicle', lat: 30.65, lng: 81.45 },
+      { day: 6, title: 'Rest day at Lake Mansarovar', detail: 'A full day by the lake for rest, ritual bathing, and acclimatisation ahead of the parikrama.', meals: 'Breakfast, Lunch, Dinner', stay: 'Lake Mansarovar — guesthouse', transport: 'On foot', lat: 30.65, lng: 81.45 },
+      { day: 7, title: 'To Darchen, start of the Kailash Parikrama', detail: 'Drive to Darchen, the traditional starting point of the pilgrimage circuit around Mount Kailash.', meals: 'Breakfast, Lunch, Dinner', stay: 'Darchen — guesthouse', transport: 'Support vehicle', lat: 31.0667, lng: 81.3 },
+      { day: 8, title: 'Parikrama Day 1 — Darchen to Dirapuk', detail: 'The first day of the circuit, walking beneath the north face of Kailash to the camp at Dirapuk.', meals: 'Breakfast, Lunch, Dinner', stay: 'Dirapuk — guesthouse', transport: 'On foot', lat: 31.1167, lng: 81.2667 },
+      { day: 9, title: 'Parikrama Day 2 — Dolma La Pass to Zutulpuk', detail: 'The high point of the yatra: a pre-dawn start over the 5,630m Dolma La Pass, then down to Zutulpuk.', meals: 'Breakfast, Lunch, Dinner', stay: 'Zutulpuk — guesthouse', transport: 'On foot', lat: 31.0333, lng: 81.3167 },
+      { day: 10, title: 'Parikrama Day 3 — Zutulpuk to Darchen', detail: 'A gentler final descent back to Darchen, completing the circuit.', meals: 'Breakfast, Lunch, Dinner', stay: 'Darchen — guesthouse', transport: 'On foot', lat: 31.0667, lng: 81.3 },
+      { day: 11, title: 'Darchen to Saga', detail: 'Begin the overland return, retracing the route back toward the border.', meals: 'Breakfast, Lunch, Dinner', stay: 'Saga — guesthouse', transport: 'Support vehicle', lat: 29.3333, lng: 85.2333 },
+      { day: 12, title: 'Saga to Kerung', detail: 'Continue the return journey across the plateau to Kerung.', meals: 'Breakfast, Lunch, Dinner', stay: 'Kerung — guesthouse', transport: 'Support vehicle', lat: 28.95, lng: 85.3167 },
+      { day: 13, title: 'Kerung to Kathmandu', detail: 'Cross back into Nepal at Rasuwagadhi and descend to Kathmandu, the altitude falling away behind you.', meals: 'Breakfast, Lunch, Dinner', stay: 'Kathmandu — hotel', transport: 'Support vehicle', lat: 27.7172, lng: 85.324 },
+      { day: 14, title: 'Contingency day', detail: 'A buffer day held in reserve for weather or border delays on the plateau.', meals: 'Breakfast, Lunch, Dinner', stay: 'Kathmandu — hotel', transport: '—', lat: 27.7172, lng: 85.324 },
+      { day: 15, title: 'Free day in Kathmandu', detail: 'A last day in the valley to rest, shop, or visit Boudhanath before departure.', meals: 'Breakfast', stay: 'Kathmandu — hotel', transport: 'Private vehicle', lat: 27.7172, lng: 85.324 },
+      { day: 16, title: 'Departure', detail: 'Transfer to the airport for your onward flight.', meals: 'Breakfast', stay: '—', transport: 'Private vehicle', lat: 27.7172, lng: 85.324 },
     ],
     altitudeProfile: [1400, 2700, 2700, 4640, 4590, 4590, 4670, 4890, 5630, 4760, 4640, 2700, 1400, 1400, 1400, 1400],
     guide: {

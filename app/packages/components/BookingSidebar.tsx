@@ -14,10 +14,6 @@ export default function BookingSidebar({ detail, onEnquire }: BookingSidebarProp
   const [endDate, setEndDate] = useState('');
   const [travelers, setTravelers] = useState(2);
 
-  const reviewCount = detail.testimonials.length;
-  const avgRating = reviewCount > 0 ? detail.testimonials.reduce((sum, t) => sum + t.rating, 0) / reviewCount : 5;
-  const total = detail.priceFrom * travelers;
-
   return (
     <div className="sticky-booking">
       <div className="glass-card rounded-4xl p-6 border-primary/20">
@@ -29,15 +25,6 @@ export default function BookingSidebar({ detail, onEnquire }: BookingSidebarProp
           </span>
         </div>
         <p className="text-sm text-muted-foreground mb-6">per person</p>
-        {reviewCount > 0 && (
-          <div className="flex items-center gap-2 mb-6">
-            {[1, 2, 3, 4, 5].map((s) => (
-              <Icon key={s} name="StarIcon" size={14} variant="solid" className="text-primary" />
-            ))}
-            <span className="text-sm text-foreground font-bold">{avgRating.toFixed(1)}</span>
-            <span className="text-xs text-muted-foreground">({reviewCount} reviews)</span>
-          </div>
-        )}
 
         {/* Dates */}
         <div className="mb-5">
@@ -85,23 +72,9 @@ export default function BookingSidebar({ detail, onEnquire }: BookingSidebarProp
           </div>
         </div>
 
-        {/* Price Breakdown */}
-        <div className="mb-6 p-4 bg-muted rounded-2xl flex flex-col gap-2">
-          <div className="flex justify-between text-sm">
-            <span className="text-muted-foreground">
-              {detail.priceCurrency} {detail.priceFrom.toLocaleString()} × {travelers} traveler{travelers > 1 ? 's' : ''}
-            </span>
-            <span className="text-foreground font-bold">
-              {detail.priceCurrency} {total.toLocaleString()}
-            </span>
-          </div>
-          <div className="border-t border-border pt-2 flex justify-between">
-            <span className="font-bold text-foreground">Estimated total</span>
-            <span className="font-serif text-xl font-bold gold-text">
-              {detail.priceCurrency} {total.toLocaleString()}
-            </span>
-          </div>
-        </div>
+        <p className="mb-6 text-xs text-muted-foreground leading-relaxed">
+          Final pricing depends on group size, dates and add-ons — we'll send a full quote after you enquire.
+        </p>
 
         {/* CTA */}
         <button type="button" onClick={onEnquire} className="btn-primary w-full text-center mb-3">

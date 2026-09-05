@@ -1,7 +1,6 @@
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
-import Icon from '@/components/ui/AppIcon';
 import AppImage from '@/components/ui/AppImage';
 import SiteChrome from '@/components/site-chrome';
 import { content } from '@/data/content';
@@ -38,7 +37,7 @@ async function TourTypePage({ params }: { params: Promise<{ category: string }> 
 
         <div className="relative z-10 px-5 sm:px-8 lg:px-12 pb-16 pt-36 max-w-[1440px] mx-auto w-full">
           <div className="flex items-center gap-2 text-xs text-white/50 mb-6">
-            <Link href="/" className="hover:text-[#f4bd48] transition-colors">Home</Link>
+            <Link href="/" className="hover:text-[#c9a227] transition-colors">Home</Link>
             <span>/</span>
             <span>Tour Types</span>
             <span>/</span>
@@ -55,35 +54,12 @@ async function TourTypePage({ params }: { params: Promise<{ category: string }> 
         </div>
       </section>
 
-      {/* Places */}
-      <section className="px-5 sm:px-8 lg:px-12 py-20 sm:py-28">
-        <div className="max-w-[1440px] mx-auto">
-          <span className="section-label">Where You'll Go</span>
-          <h2 className="font-serif text-display-sm font-bold tracking-tighter text-foreground mb-10">
-            Places on this
-            <span className="italic"> route</span>
-          </h2>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-            {category.destinations.map((destination) => (
-              <div key={destination.label} className="bg-card border border-border rounded-3xl p-6" data-testid={`card-place-${destination.label.toLowerCase()}`}>
-                <div className="flex items-center gap-2 text-primary mb-3">
-                  <Icon name="MapPinIcon" size={16} />
-                  <h3 className="font-serif font-bold text-lg text-foreground">{destination.label}</h3>
-                </div>
-                <p className="text-sm text-muted-foreground leading-relaxed">{destination.blurb}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* Packages */}
-      <section className="package-grid-section px-5 pb-28 sm:px-8 lg:px-12" data-testid="section-tour-type-packages">
+      <section className="package-grid-section px-5 pt-20 pb-28 sm:px-8 sm:pt-28 lg:px-12" data-testid="section-tour-type-packages">
         <div className="mx-auto max-w-[1440px]">
           <div className="mb-10 flex flex-col justify-between gap-5 sm:flex-row sm:items-end">
             <div>
-              <p className="eyebrow text-[#f4bd48]">Available Now</p>
+              <p className="eyebrow text-[#c9a227]">Tour Types</p>
               <h2 className="mt-3 font-display text-5xl leading-[.93] text-white sm:text-6xl">
                 {category.label} packages.
               </h2>

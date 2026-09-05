@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useEffect, useRef, useCallback } from 'react';
-import { MapPin, NotebookPen } from 'lucide-react';
+import { CalendarDays, ChevronRight, NotebookPen } from 'lucide-react';
 import ItenarySection from '@/app/packages/components/ItenarySection';
 import CustomItinerarySection from '@/app/packages/components/CustomItinerarySection';
 import type { ItineraryDay } from '@/lib/packages';
@@ -92,18 +92,19 @@ export default function ItinerarySplitPanel({ itinerary, destinationLabel, heroI
           <button
             type="button"
             onClick={() => expand('itinerary')}
-            className="group w-full h-full glass-card rounded-3xl flex flex-col items-center justify-center gap-4 p-4 hover:border-primary/40 transition-colors"
+            className="group w-full h-full glass-card rounded-3xl flex flex-col items-center justify-center gap-4 p-6 text-center hover:border-primary/40 transition-colors"
             aria-label="Show itinerary"
             data-testid="collapsed-itinerary-panel"
           >
-            <div className="w-11 h-11 rounded-2xl bg-primary/10 text-primary flex items-center justify-center shrink-0 transition-colors group-hover:bg-primary group-hover:text-primary-foreground">
-              <MapPin size={18} />
+            <span className="w-11 h-11 rounded-2xl bg-primary/10 text-primary flex items-center justify-center shrink-0 transition-colors group-hover:bg-primary group-hover:text-primary-foreground">
+              <CalendarDays size={19} />
+            </span>
+            <div>
+              <p className="font-serif font-bold text-lg text-foreground leading-snug">Standard Itinerary</p>
+              <p className="mt-1 text-xs text-muted-foreground leading-relaxed">Day-by-day plan for this trip — stays, meals and transport.</p>
             </div>
-            <span
-              className="text-[10px] font-bold uppercase tracking-widest text-muted-foreground"
-              style={{ writingMode: 'vertical-rl', transform: 'rotate(180deg)' }}
-            >
-              Your Itinerary
+            <span className="inline-flex items-center gap-1.5 text-xs font-bold text-primary">
+              View days <ChevronRight size={15} />
             </span>
           </button>
         )}
@@ -126,18 +127,19 @@ export default function ItinerarySplitPanel({ itinerary, destinationLabel, heroI
           <button
             type="button"
             onClick={() => expand('custom')}
-            className="group w-full h-full glass-card rounded-3xl flex flex-col items-center justify-center gap-4 p-4 hover:border-primary/40 transition-colors"
+            className="group w-full h-full glass-card rounded-3xl flex flex-col items-center justify-center gap-4 p-6 text-center hover:border-primary/40 transition-colors"
             aria-label="Build your own itinerary"
             data-testid="collapsed-custom-panel"
           >
-            <div className="w-11 h-11 rounded-2xl bg-primary/10 text-primary flex items-center justify-center shrink-0 transition-colors group-hover:bg-primary group-hover:text-primary-foreground">
-              <NotebookPen size={18} />
+            <span className="w-11 h-11 rounded-2xl bg-primary/10 text-primary flex items-center justify-center shrink-0 transition-colors group-hover:bg-primary group-hover:text-primary-foreground">
+              <NotebookPen size={19} />
+            </span>
+            <div>
+              <p className="font-serif font-bold text-lg text-foreground leading-snug">Build Your Own</p>
+              <p className="mt-1 text-xs text-muted-foreground leading-relaxed">Sketch your own day-by-day plan and send it to our team.</p>
             </div>
-            <span
-              className="text-[10px] font-bold uppercase tracking-widest text-muted-foreground"
-              style={{ writingMode: 'vertical-rl', transform: 'rotate(180deg)' }}
-            >
-              Build Your Itinerary
+            <span className="inline-flex items-center gap-1.5 text-xs font-bold text-primary">
+              Open builder <ChevronRight size={15} />
             </span>
           </button>
         )}

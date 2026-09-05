@@ -24,9 +24,9 @@ const ratingConfig: Record<MonthRating, { label: string; color: string; bg: stri
   },
   fair: {
     label: 'Fair',
-    color: 'text-amber-400',
-    bg: 'bg-amber-400/10 border-amber-400/30',
-    dot: 'bg-amber-400',
+    color: 'text-amber-600',
+    bg: 'bg-amber-600/10 border-amber-600/30',
+    dot: 'bg-amber-600',
     note: 'Workable, but expect more changeable weather — pack layers and stay flexible.',
   },
   poor: {

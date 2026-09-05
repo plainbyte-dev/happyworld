@@ -35,9 +35,6 @@ function SiteHeader({ scrolled, menuOpen, onToggleMenu, onEnquire, solid }: Site
   };
   const [tripsOpen, setTripsOpen] = useState(false);
   const [activeCategory, setActiveCategory] = useState(content.tripsMenu[0].key);
-  const [hoveredDestination, setHoveredDestination] = useState<string | null>(
-    content.tripsMenu[0]?.destinations[0]?.label ?? null,
-  );
   const [apiPackages, setApiPackages] = useState<ApiPackageSummary[] | null>(null);
   const closeTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
 
@@ -66,13 +63,9 @@ function SiteHeader({ scrolled, menuOpen, onToggleMenu, onEnquire, solid }: Site
     };
   }, []);
 
-  const defaultHoveredDestination = (categoryKey: string) =>
-    content.tripsMenu.find((category) => category.key === categoryKey)?.destinations[0]?.label ?? null;
-
   const closeTrips = () => {
     setTripsOpen(false);
     setActiveCategory(content.tripsMenu[0].key);
-    setHoveredDestination(defaultHoveredDestination(content.tripsMenu[0].key));
   };
 
   const scheduleCloseTrips = () => {
@@ -80,11 +73,14 @@ function SiteHeader({ scrolled, menuOpen, onToggleMenu, onEnquire, solid }: Site
     closeTimer.current = setTimeout(closeTrips, 200);
   };
 
-  const packagesForDestination = (categoryKey: string, destinationLabel: string, fallback: { name: string }[]) => {
-    if (categoryKey !== 'nepal-tours') return fallback;
+  const packagesForCategory = (category: (typeof content.tripsMenu)[number]) => {
+    if (category.key !== 'nepal-tours') {
+      return category.destinations.flatMap((destination) => destination.packages);
+    }
     if (!apiPackages) return [];
+    const destinationLabels = category.destinations.map((destination) => destination.label.toLowerCase());
     return apiPackages
-      .filter((pkg) => pkg.destinations.some((d) => d.toLowerCase() === destinationLabel.toLowerCase()))
+      .filter((pkg) => pkg.destinations.some((d) => destinationLabels.includes(d.toLowerCase())))
       .map((pkg) => ({ name: pkg.title.trim() }));
   };
 
@@ -127,12 +123,7 @@ function SiteHeader({ scrolled, menuOpen, onToggleMenu, onEnquire, solid }: Site
                   {(() => {
                     const activeCategoryData =
                       content.tripsMenu.find((category) => category.key === activeCategory) ?? content.tripsMenu[0];
-                    const effectiveDestination =
-                      activeCategoryData.destinations.find((destination) => destination.label === hoveredDestination) ??
-                      activeCategoryData.destinations[0];
-                    const packages = effectiveDestination
-                      ? packagesForDestination(activeCategoryData.key, effectiveDestination.label, effectiveDestination.packages)
-                      : [];
+                    const packages = packagesForCategory(activeCategoryData);
                     const packagesLoading = activeCategoryData.key === 'nepal-tours' && apiPackages === null;
 
                     return (
@@ -145,15 +136,11 @@ function SiteHeader({ scrolled, menuOpen, onToggleMenu, onEnquire, solid }: Site
                                 <a
                                   href={category.href}
                                   className={`trips-category-link ${activeCategory === category.key ? 'trips-category-link-active' : ''}`}
-                                  onMouseEnter={() => {
-                                    setActiveCategory(category.key);
-                                    setHoveredDestination(defaultHoveredDestination(category.key));
-                                  }}
+                                  onMouseEnter={() => setActiveCategory(category.key)}
                                   onClick={(e) => {
                                     if (activeCategory !== category.key) {
                                       e.preventDefault();
                                       setActiveCategory(category.key);
-                                      setHoveredDestination(defaultHoveredDestination(category.key));
                                     }
                                   }}
                                   data-testid={`link-trips-category-${category.key}`}
@@ -165,40 +152,9 @@ function SiteHeader({ scrolled, menuOpen, onToggleMenu, onEnquire, solid }: Site
                             ))}
                           </ul>
                         </div>
-                        <div className="trips-mega-col trips-mega-col-destinations" aria-label="Destinations">
-                          <p className="trips-col-eyebrow">{activeCategoryData.label} destinations</p>
-                          <div className="trips-destinations-grid">
-                            {activeCategoryData.destinations.map((destination) => {
-                              const destinationPackages = packagesForDestination(activeCategoryData.key, destination.label, destination.packages);
-                              const isActiveDestination = effectiveDestination?.label === destination.label;
-                              return (
-                                <div
-                                  key={destination.label}
-                                  className={`trips-destination-item ${isActiveDestination ? 'trips-destination-item-active' : ''}`}
-                                  onMouseEnter={() => setHoveredDestination(destination.label)}
-                                >
-                                  <a
-                                    href={destination.href}
-                                    className="trips-destination-link"
-                                    onClick={(e) => {
-                                      if (destinationPackages.length > 0 && hoveredDestination !== destination.label) {
-                                        e.preventDefault();
-                                        setHoveredDestination(destination.label);
-                                      }
-                                    }}
-                                    data-testid={`link-destination-${destination.label.toLowerCase()}`}
-                                  >
-                                    {destination.label}
-                                  </a>
-                                </div>
-                              );
-                            })}
-                          </div>
-                        </div>
                         <div className="trips-mega-col trips-mega-col-packages" data-testid="menu-trips-packages">
                           <p className="trips-col-eyebrow">
-                            {packagesLabelForCategory(activeCategoryData.key)} in{' '}
-                            {effectiveDestination?.label ?? activeCategoryData.label}
+                            {activeCategoryData.label} {packagesLabelForCategory(activeCategoryData.key).toLowerCase()}
                           </p>
                           <div className="trips-destinations-grid trips-packages-list">
                             {packagesLoading ? (

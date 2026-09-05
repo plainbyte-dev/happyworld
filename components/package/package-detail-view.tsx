@@ -10,6 +10,7 @@ import SiteFooter from '@/components/sections/site-footer';
 import PackageHero from '@/app/packages/components/PackageHero';
 import GallerySection from '@/app/packages/components/GallerySection';
 import ItinerarySplitPanel from '@/app/packages/components/ItinerarySplitPanel';
+import AltitudeSection from '@/app/packages/components/AltitudeSection';
 import WhenToVisit from '@/app/packages/components/WhenToVisit';
 import FaqSection from '@/app/packages/components/FaqSection';
 import BookingSidebar from '@/app/packages/components/BookingSidebar';
@@ -66,13 +67,17 @@ function PackageDetailView({ detail, related }: PackageDetailViewProps) {
       </div>
 
       <div className="max-w-360 mx-auto px-5 pb-20">
+        <AltitudeSection altitudeProfile={detail.altitudeProfile} itinerary={detail.itinerary} />
+      </div>
+
+      <div className="max-w-360 mx-auto px-5 pb-20">
         <FaqSection faqs={detail.faqs} />
       </div>
 
       {related.length > 0 ? (
         <section className="pkg-related">
           <div className="pkg-related-inner">
-            <p className="eyebrow text-[#f4bd48]">KEEP EXPLORING</p>
+            <p className="eyebrow text-[#c9a227]">KEEP EXPLORING</p>
             <h2 className="pkg-related-title">Related packages</h2>
             <div className="pkg-related-grid">
               {related.map((item) => (

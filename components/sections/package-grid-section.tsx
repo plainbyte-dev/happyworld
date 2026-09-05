@@ -28,7 +28,7 @@ function PackageGridSection() {
       <div className="mx-auto max-w-[1440px]">
         <div className="mb-10 flex flex-col justify-between gap-5 sm:flex-row sm:items-end">
           <div>
-            <p className="eyebrow text-[#f4bd48]">FRESH OFF THE PRESS</p>
+            <p className="eyebrow text-[#c9a227]">FRESH OFF THE PRESS</p>
             <h2 className="mt-3 font-display text-5xl leading-[.93] text-[#ffffff] sm:text-6xl" data-testid="text-package-grid-heading">Latest trips.</h2>
           </div>
           <p className="max-w-[285px] text-sm leading-relaxed text-[#b7bfd8]">Newly published itineraries, straight from the team planning them.</p>
