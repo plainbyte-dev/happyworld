@@ -60,7 +60,7 @@ export default function PackageHero({ detail }: PackageHeroProps) {
           </span>
         </div>
 
-        <h1 ref={titleRef} className="font-serif text-display-lg font-bold italic text-white mb-6 tracking-tighter leading-[0.9]">
+        <h1 ref={titleRef} className="font-serif text-display-lg font-bold text-white mb-6 tracking-tighter leading-[0.9]">
           {detail.name}
         </h1>
 

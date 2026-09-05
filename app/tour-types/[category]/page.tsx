@@ -48,7 +48,7 @@ async function TourTypePage({ params }: { params: Promise<{ category: string }> 
           <span className="inline-block bg-primary text-primary-foreground px-4 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest mb-6">
             Tour Type
           </span>
-          <h1 className="font-serif text-display-lg font-bold italic text-white tracking-tighter leading-[0.9]">
+          <h1 className="font-serif text-display-lg font-bold text-white tracking-tighter leading-[0.9]">
             {category.label}
           </h1>
           <p className="mt-6 max-w-xl text-base sm:text-lg text-white/75 leading-relaxed">{category.description}</p>

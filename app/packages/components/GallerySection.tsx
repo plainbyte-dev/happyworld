@@ -53,7 +53,7 @@ export default function GallerySection({ images }: GallerySectionProps) {
       <span className="section-label">Photo Gallery</span>
       <h2 className="font-serif text-display-sm font-bold tracking-tighter text-foreground mb-8">
         See the
-        <span className="italic"> Destination</span>
+        <span> Destination</span>
       </h2>
 
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">

@@ -150,7 +150,7 @@ export default function ItenarySection({ itinerary, destinationLabel, heroImage,
           <span className="section-label">Day-by-Day Plan</span>
           <h2 className="font-serif text-display-sm font-bold tracking-tighter text-foreground">
             Your
-            <span className="italic"> Itinerary</span>
+            <span> Itinerary</span>
           </h2>
         </div>
 

@@ -69,7 +69,7 @@ function ContactPageClient() {
             <span className="section-label">Get In Touch</span>
             <h1 className="font-serif text-display-lg font-bold tracking-tighter text-foreground">
               Let's plan your
-              <span className="italic"> Nepal.</span>
+              <span> Nepal.</span>
             </h1>
             <p className="mt-6 max-w-xl text-base sm:text-lg text-muted-foreground leading-relaxed">
               Questions, a custom itinerary, or you just want to talk it through first — reach us however's easiest, or send a note below.

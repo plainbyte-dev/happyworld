@@ -50,7 +50,7 @@ export default function WhenToVisit({ bestTime }: WhenToVisitProps) {
       <span className="section-label">Best Time to Go</span>
       <h2 className="font-serif text-display-sm font-bold tracking-tighter text-foreground mb-4">
         When to
-        <span className="italic"> Visit</span>
+        <span> Visit</span>
       </h2>
       <p className="text-foreground/60 text-sm font-light mb-10 max-w-xl">
         This route is open year-round, but conditions vary by month. Tap any month to see how it compares.

@@ -19,7 +19,7 @@ function TourTypesPage() {
           <span className="section-label">Ways To Travel</span>
           <h1 className="font-serif text-display-lg font-bold tracking-tighter text-foreground">
             Choose your
-            <span className="italic"> tour type.</span>
+            <span> tour type.</span>
           </h1>
           <p className="mt-6 max-w-xl text-base sm:text-lg text-muted-foreground leading-relaxed">
             Three ways into Nepal, each with its own pace and places. Pick a route to see the destinations and packages that come with it.

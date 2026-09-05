@@ -16,7 +16,7 @@ export default function FaqSection({ faqs }: FaqSectionProps) {
       <span className="section-label">Questions Answered</span>
       <h2 className="font-serif text-display-sm font-bold tracking-tighter text-foreground mb-10">
         Frequently
-        <span className="italic"> Asked</span>
+        <span> Asked</span>
       </h2>
 
       <div className="flex flex-col gap-3">

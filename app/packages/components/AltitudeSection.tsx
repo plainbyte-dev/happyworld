@@ -129,7 +129,7 @@ export default function AltitudeSection({ altitudeProfile, itinerary }: Altitude
       <span className="section-label">Altitude Information</span>
       <h2 className="font-serif text-display-sm font-bold tracking-tighter text-foreground mb-4">
         Know Before
-        <span className="italic"> You Go</span>
+        <span> You Go</span>
       </h2>
       <p className="text-foreground/60 text-sm font-light mb-10 max-w-xl">
         Altitude affects everyone differently. Here's how elevation changes day by day, so you can prepare and stay

@@ -74,7 +74,7 @@ export default function CustomItinerarySection({ packageName, fullWidth = false 
                 <span className="section-label">Plan It Your Way</span>
                 <h2 className="font-serif text-display-sm font-bold tracking-tighter text-foreground">
                   Build Your
-                  <span className="italic"> Own Itinerary</span>
+                  <span> Own Itinerary</span>
                 </h2>
               </div>
               {!fullWidth && (
