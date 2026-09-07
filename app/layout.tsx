@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import { montserrat } from "./fonts";
+import PageTransitionOverlay from "@/components/page-transition-overlay";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -121,7 +122,10 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
           dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
         />
       </head>
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className="min-h-full flex flex-col">
+        <PageTransitionOverlay />
+        {children}
+      </body>
     </html>
   );
 }

@@ -16,7 +16,7 @@ function EnquirySection({ form, submitted, onSubmit, onSendAnother }: EnquirySec
       <div className="mx-auto grid max-w-[1240px] gap-14 lg:grid-cols-[.85fr_1.15fr] lg:gap-24">
         <div>
           <p className="eyebrow text-[#c9a227]">CONTACT US</p>
-          <h2 className="mt-5 font-display text-6xl leading-[.88] text-[#ffffff] sm:text-7xl" data-testid="text-enquiry-title">A good journey<br /><em>starts here.</em></h2>
+          <h2 className="mt-5 font-display text-6xl leading-[.88] text-[#ffffff] sm:text-7xl" data-testid="text-enquiry-title">A good journey<br /><span>starts here.</span></h2>
           <p className="mt-8 max-w-[380px] text-[16px] leading-relaxed text-[#c3c9e6]">Tell us what has been tugging at you. There is no perfect brief required — just a starting point.</p>
           <div className="mt-12 space-y-4 border-t border-[#2c3e68] pt-6">
             <a href="mailto:happyworldtt@gmail.com" className="contact-line" data-testid="link-email"><Mail size={16} /> happyworldtt@gmail.com</a>

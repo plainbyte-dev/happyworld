@@ -142,6 +142,29 @@
 .site-nav { color: #ffffff; }
 .site-nav-scrolled { background: rgba(255, 255, 255, .96); color: #1a2650; box-shadow: 0 1px 0 rgba(26,38,80,.10); backdrop-filter: blur(12px); }
 .brand-logo { height: 92px; width: auto; object-fit: contain; }
+
+.page-transition-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #ffffff;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity .35s ease, visibility 0s linear .35s;
+}
+.page-transition-overlay.is-visible {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: all;
+  transition: opacity .35s ease, visibility 0s linear 0s;
+}
+.page-transition-logo { opacity: 0; transform: scale(.9); transition: opacity .35s ease, transform .35s ease; }
+.page-transition-overlay.is-visible .page-transition-logo { opacity: 1; transform: scale(1); }
+.page-transition-logo .brand-logo { height: 220px; }
 .nav-link { position: relative; display: inline-block; font-size: 15px; font-weight: 500; letter-spacing: .02em; color: currentColor; cursor: pointer; transition: color .2s ease; }
 .nav-link::after { position: absolute; bottom: -8px; left: 0; width: 100%; height: 1px; background: currentColor; content: ''; transform: scaleX(0); transform-origin: left; transition: transform .3s ease; pointer-events: none; }
 .nav-link:hover, .nav-link:focus-visible { color: hsl(var(--accent)); }
@@ -210,7 +233,7 @@
 .inline-link:hover svg { transform: translateX(4px); }
 .journey-section { background: #1a2650; }
 .experience-grid { display: grid; grid-template-columns: 1fr; gap: 12px; }
-.experience-card { position: relative; min-height: 480px; overflow: hidden; }
+.experience-card { display: block; position: relative; min-height: 480px; overflow: hidden; }
 .experience-card-tall { min-height: 560px; }
 .experience-card img { position: absolute; inset: 0; height: 100%; width: 100%; object-fit: cover; transition: transform .8s cubic-bezier(.22,1,.36,1); }
 .experience-card:hover img { transform: scale(1.06); }

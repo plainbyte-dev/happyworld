@@ -1,11 +1,8 @@
+import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
 import { content } from '@/data/content';
 
-type JourneysSectionProps = {
-  onSelectInterest: (interest: string) => void;
-};
-
-function JourneysSection({ onSelectInterest }: JourneysSectionProps) {
+function JourneysSection() {
   return (
     <section id="journeys" className="journey-section px-5 pb-28 sm:px-8 lg:px-12">
       <div className="mx-auto max-w-[1440px]">
@@ -18,7 +15,12 @@ function JourneysSection({ onSelectInterest }: JourneysSectionProps) {
         </div>
         <div className="experience-grid">
           {content.experiences.map((experience, index) => (
-            <article key={experience.title} className={`experience-card ${index === 1 ? 'experience-card-tall' : ''}`} data-testid={`card-experience-${index + 1}`}>
+            <Link
+              key={experience.title}
+              href={experience.href}
+              className={`experience-card cursor-pointer ${index === 1 ? 'experience-card-tall' : ''}`}
+              data-testid={`card-experience-${index + 1}`}
+            >
               <img src={experience.image} alt={`${experience.title} in Nepal`} loading="lazy" />
               <div className="experience-overlay" />
               <div className="absolute inset-x-0 bottom-0 p-5 sm:p-7">
@@ -27,11 +29,11 @@ function JourneysSection({ onSelectInterest }: JourneysSectionProps) {
                 </div>
                 <h3 className="mt-3 font-display text-[2.35rem] leading-none text-[#ffffff]">{experience.title}</h3>
                 <p className="mt-3 max-w-[260px] text-sm leading-relaxed text-[#dfe2f0]">{experience.detail}</p>
-                <button type="button" className="experience-link mt-6" onClick={() => onSelectInterest(experience.kind.toLowerCase())} data-testid={`button-experience-${index + 1}`}>
+                <span className="experience-link mt-6" data-testid={`button-experience-${index + 1}`}>
                   Start here <ArrowRight size={15} />
-                </button>
+                </span>
               </div>
-            </article>
+            </Link>
           ))}
         </div>
       </div>

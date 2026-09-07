@@ -12,6 +12,7 @@ export type Experience = {
   detail: string;
   image: string;
   meta: string;
+  href: string;
 };
 
 export type DestinationPackage = {
@@ -37,7 +38,7 @@ export const content = {
   nav: [
     { label: 'Home', href: '/' },
     { label: 'Trips ', href: '#way' },
-    { label: 'About Us ', href: '#' },
+    { label: 'About Us ', href: '/about' },
     { label: 'Contact Us', href: '/contact' },
   ],
   tripsMenu: [
@@ -174,6 +175,7 @@ export const content = {
       detail: 'For the days when the trail is the destination.',
       image: '/content-images/image1.png',
       meta: '04 — 21 DAYS',
+      href: '/tour-types/trekking',
     },
     {
       title: 'Pilgrim roads',
@@ -181,6 +183,7 @@ export const content = {
       detail: 'Ancient paths, sacred pauses, a different pace.',
       image: '/content-images/image2.png',
       meta: '05 — 14 DAYS',
+      href: '/tour-types/kailash',
     },
     {
       title: 'Living archives',
@@ -188,6 +191,7 @@ export const content = {
       detail: 'A close look at the Nepal that keeps creating.',
       image: '/content-images/image3.png',
       meta: '03 — 09 DAYS',
+      href: '/tour-types/nepal-tours',
     },
   ] satisfies Experience[],
   services: [
@@ -211,5 +215,30 @@ export const content = {
     email: 'happyworldtt@gmail.com',
     phone: '+977 984-0177646',
     whatsapp: '9779840177646',
+  },
+  about: {
+    hero: {
+      title: 'A small team,\na whole country.',
+      body: "Happy World Travel Tours is a Kathmandu-based, locally owned company built around one idea: the best trips are shaped by the people who actually live here.",
+    },
+    story: {
+      kicker: 'HOW WE WORK',
+      title: "We plan every trip the way we'd plan one for a friend.",
+      paragraphs: [
+        'We started this company because too many trips to Nepal were being sold from templates — the same routes, the same photo stops, the same rushed pace. We wanted to offer something closer to how we actually travel here ourselves.',
+        "Every itinerary we send out is built by someone who has walked the trail, sat in the temple courtyard, or shared tea with the family you'll stay with. Nothing gets recommended that we would not do ourselves.",
+      ],
+      image: '/content-images/image3.png',
+    },
+    values: [
+      { title: 'Locally rooted', body: 'Nepali-owned and Kathmandu-based, with guides drawn from the regions we travel through.' },
+      { title: 'Small by design', body: 'We keep groups small and itineraries flexible, so your trip never feels like a queue.' },
+      { title: 'Honest planning', body: 'Clear pricing, realistic pacing, and no route sold to you that we would not take ourselves.' },
+      { title: 'There when it counts', body: 'From the first message to the last cup of tea, one team stays with your trip end to end.' },
+    ],
+    closing: {
+      title: "Let's talk about your Nepal.",
+      body: 'Tell us what you are after and we will shape a trip around it — no template required.',
+    },
   },
 } as const;

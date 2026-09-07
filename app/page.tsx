@@ -71,7 +71,7 @@ function Home() {
         onMouseLeave={() => setPaused(false)}
       />
       <IntroductionSection />
-      <JourneysSection onSelectInterest={scrollToEnquiry} />
+      <JourneysSection />
       <PackageGridSection />
       <HowWeTravelSection />
       <EnquirySection

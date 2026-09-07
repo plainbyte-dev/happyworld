@@ -31,6 +31,7 @@ function SiteHeader({ scrolled, menuOpen, onToggleMenu, onEnquire, solid }: Site
     if (trimmedHref === '/') return pathname === '/';
     if (trimmedHref === '#way') return pathname.startsWith('/packages');
     if (trimmedHref === '/contact') return pathname === '/contact';
+    if (trimmedHref === '/about') return pathname === '/about';
     return false;
   };
   const [tripsOpen, setTripsOpen] = useState(false);
