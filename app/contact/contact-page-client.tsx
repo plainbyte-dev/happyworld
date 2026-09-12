@@ -11,6 +11,7 @@ import EnquirySection from '@/components/sections/enquiry-section';
 import { content } from '@/data/content';
 import { enquirySchema, type EnquiryValues } from '@/lib/enquiry-schema';
 import { buildEnquiryWhatsappUrl } from '@/lib/whatsapp';
+import { submitContactEnquiry } from '@/lib/contact';
 
 const contactMethods = [
   {
@@ -54,7 +55,8 @@ function ContactPageClient() {
     defaultValues: { name: '', email: '', interest: '', message: prefillMessage, updates: false },
   });
 
-  const submitEnquiry = (values: EnquiryValues) => {
+  const submitEnquiry = async (values: EnquiryValues) => {
+    await submitContactEnquiry(values);
     window.open(buildEnquiryWhatsappUrl(content.footer.whatsapp, values), '_blank', 'noopener,noreferrer');
     setSubmitted(true);
     form.reset();

@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(curl -s \"https://tours-travels-admin.onrender.com/api/packages\")",
+      "Bash(node -e ' *)",
+      "Bash(git commit -m ' *)"
+    ]
+  }
+}
